@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-// import './App.css';
+import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -96,6 +96,7 @@ const checkUser = async () => {
     <DndProvider backend={HTML5Backend}>
 
       <MyNav user={user} setUser={setUser} />
+       
         <Switch>
           <AuthRoute
             exact
@@ -129,6 +130,8 @@ const checkUser = async () => {
           <Route path="/leaderboard" render={() => <TopTen setPlayer={setPlayer} />} />
           <Route path="/" component={Index} />
         </Switch>
+   
+   
     <footer className="p-5 footer" >
       <div className="container">
         <div className="divider">
