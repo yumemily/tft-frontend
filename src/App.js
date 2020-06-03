@@ -1,5 +1,5 @@
-import React, { useState , useEffect} from 'react';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+// import './App.css';
 
 import 'bootstrap/dist/css/bootstrap.css';
 
@@ -142,5 +142,22 @@ const checkUser = async () => {
     </DndProvider>
   );
 }
+
+
+
+// function App() {
+//   return (
+//     <div style={{ display: "flex", flexDirection:"column", backgroundColor:"white", height:"100vh" }}>
+      
+//       <div style={{ flex: "1 0 auto" }}>
+//         dsadsadsada
+//       </div>
+//       <div>dasdasdasd</div>
+//       <div style={{height: "56px", display:"flex", flexDirection:"column", justifyContent:"center"}}>
+//         <p>footer</p>
+//       </div>
+//     </div>
+//   )
+// }
 
 export default App;
