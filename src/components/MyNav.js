@@ -11,7 +11,7 @@ export default function MyNav(props) {
     const history = useHistory();
 
     const handleLogout = async () => {
-        const res = await fetch(process.env.REACT_APP_SERVER  + "/auth/logout", {
+        const res = await fetch(process.env.REACT_APP_SERVER + "/auth/logout", {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` }
         });
         if (res.status === 204) {
@@ -22,7 +22,7 @@ export default function MyNav(props) {
 
     return (
         <Navbar className="navbar-dark nav-bg"  expand="lg">
-            <Navbar.Brand><img style={{width:150, marginBottom:5}}src="../../images/navlogo.png"></img></Navbar.Brand>
+            <Navbar.Brand><img style={{width:150}}src="../../images/nav_logo.png"></img></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
                 <Nav className="mr-auto">

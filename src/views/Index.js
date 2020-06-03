@@ -81,7 +81,7 @@ export default function Index() {
                 <div class="container h-100">
                     <div class="d-flex h-100 text-center align-items-center">
                         <div class="w-100 text-white">
-                            <h1 className="display-3 tracking-in-expand">TFT Helper</h1>
+                            <h1 className="display-3 tracking-in-expand">TFT Tracker</h1>
 
                             <p class="lead mb-4">Match history, ranked statistics, and much more at your fingertips</p>
                             <button className="button-index p-2"><span><Link style={{ color: "white", textDecoration: "none" }} to="login">Sign up!</Link></span></button>
