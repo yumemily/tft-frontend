@@ -262,9 +262,9 @@
   margin: 0;
   padding: 0;
 }
-body {
+/* body {
   background: #222222;
-}
+} */
 
 #hexGrid {
 display: flex;
@@ -888,7 +888,23 @@ object-fit: cover;
   background-color: #102531 !important;
 }
 
-.footer {
+/* .footer {
   background-color: #0D202C;
   color: white;
+} */
+html, body {
+  background-color: #0D202C !important; 
+  min-height: 100% !important;
+  margin: 0
 }
+
+body{
+  display: flex;
+  flex-direction: column;
+}
+footer {
+  background-color: #0D202C;
+  color: white;
+  margin-top:auto;
+}
+

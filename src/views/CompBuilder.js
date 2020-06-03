@@ -83,7 +83,7 @@ export default function CompBuilder() {
         <div style={{ backgroundColor: "#0D202C" }}>
             <div className="container" style={{ backgroundColor: "#0D202C" }}>
                 <div className="divider-section py-4">
-                    <span className="my-4">v10.11 Team Comp Builder</span>
+                    <span className="my-4">v1.0 Team Comp Builder</span>
                     <div className="divider "></div>
                 </div>
                 <Board me={me} deck={deck} setDeck={setDeck} title={title} setTitle={setTitle} />

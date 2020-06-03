@@ -70,7 +70,9 @@ export default function Index() {
     if (loading) return (<MySpinner />)
 
     return (
-        <div>
+        <div style={{ display: "flex", flexDirection:"column", backgroundColor:"white", height:"100vh" }}>
+        
+        <div style={{ flex: "1 0 auto" }}>
             <header>
                 <div class="overlay"></div>
                 <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
@@ -149,12 +151,13 @@ export default function Index() {
 
                 </div>
             </section>
-            <section className="features-icons">
+            <section >
                 <div className="container">
-                    <h3 className="text-center">v10.11 Comps</h3>
+                    <h3 className="text-center text-white">v1.0 Comps</h3>
                     {compRow}
                 </div>
             </section>
         </div >
+        </div>
     )
 }

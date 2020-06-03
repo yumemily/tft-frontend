@@ -56,7 +56,7 @@ export default function User(props) {
             <EditAccount />
           }
           {view == "main" &&
-            <div>
+            <div className="text-white">
               <h1>Welcome back {user && user.name}!</h1>
               <h3>Account Information</h3>
               <h4>Name: {user && user.name}</h4>

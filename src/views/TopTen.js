@@ -42,44 +42,44 @@ export default function TopTen(props) {
     })
 
     if (loading) return (
-       <MySpinner/>
+        <MySpinner />
     )
 
     return (
-
-        <div className="container mt-3">
-            <nav className="nav nav-pills nav-fill">
-                <a className="nav-item nav-link active" href="#">Challenger</a>
-                <a className="nav-item nav-link disabled" href="#">Grandmaster</a>
-                <a className="nav-item nav-link disabled" href="#">Master</a>
-                <a className="nav-item nav-link disabled" href="#">Diamond</a>
-                <a className="nav-item nav-link disabled" href="#">Platinum</a>
-                <a className="nav-item nav-link disabled" href="#">Gold</a>
-                <a className="nav-item nav-link disabled" href="#">Silver</a>
-                <a className="nav-item nav-link disabled" href="#">Bronze</a>
-            </nav>
-            <div className="leaderboard-header d-flex justify-content-center align-items-center">
-                {/* <img src="https://cdn.lolchess.gg/images/leaderboards/ico-tier-placeholder.png"/> */}
-                <div className="leaderboard-header-title">TFT Leaderboard</div>
-            </div>
-            <div className="table-responsive">
-                <table class="table">
-                    <thead className="thead-dark leaderboard-table-header">
-                        <tr>
-                            <th scope="col">Rank</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Tier</th>
-                            <th scope="col"><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> LP</th>
-                            <th scope="col">WinRate</th>
-                            <th scope="col">Wins</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {tableHtml}
-                    </tbody>
-                </table>
+        <div className="bg">
+            <div className="container pt-3">
+                <nav className="nav nav-pills nav-fill">
+                    <a className="nav-item nav-link active" href="#">Challenger</a>
+                    <a className="nav-item nav-link disabled" href="#">Grandmaster</a>
+                    <a className="nav-item nav-link disabled" href="#">Master</a>
+                    <a className="nav-item nav-link disabled" href="#">Diamond</a>
+                    <a className="nav-item nav-link disabled" href="#">Platinum</a>
+                    <a className="nav-item nav-link disabled" href="#">Gold</a>
+                    <a className="nav-item nav-link disabled" href="#">Silver</a>
+                    <a className="nav-item nav-link disabled" href="#">Bronze</a>
+                </nav>
+                <div className="leaderboard-header d-flex justify-content-center align-items-center">
+                    {/* <img src="https://cdn.lolchess.gg/images/leaderboards/ico-tier-placeholder.png"/> */}
+                    <div className="leaderboard-header-title">TFT Leaderboard</div>
+                </div>
+                <div className="table-responsive">
+                    <table class="table">
+                        <thead className="thead-dark leaderboard-table-header">
+                            <tr>
+                                <th scope="col">Rank</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Tier</th>
+                                <th scope="col"><i class="fa fa-sort-amount-asc" aria-hidden="true"></i> LP</th>
+                                <th scope="col">WinRate</th>
+                                <th scope="col">Wins</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {tableHtml}
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
-
     )
 }

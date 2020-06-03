@@ -68,10 +68,10 @@ export default function Favorites() {
     if(loading) return (<MySpinner/>)
 
     return (
-        <div style={{backgroundColor: "#0D202C", height:"100%"}}>
-            <div className="container">
+
+            <div className="container" style={{ backgroundColor: "#0D202C"}}>
                 {compRow}
-            </div>
+
         </div>
     )
 }

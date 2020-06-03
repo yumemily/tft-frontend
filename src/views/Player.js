@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useParams } from "react-router-dom"
 import '../App.css';
 import MySpinner from '../components/MySpinner';
+import Tooltip from '@material-ui/core/Tooltip';
 
 
 export default function Player(props) {
@@ -74,12 +75,14 @@ export default function Player(props) {
                                         {renderStars(el)}
                                     </div>
                                     <div className="row justify-content-center">
-                                        <img className={`unit-img-${el.rarity}`} style={{ width: 40, margin: 4 }} src={`../../images/${el.character_id}.png`} />
+                                        <Tooltip title={el.character_id} arrow>
+                                            <img className={`unit-img-${el.rarity}`} style={{ width: 40, margin: 4 }} src={`../../images/${el.character_id}.png`} />
+                                        </Tooltip>
                                     </div>
 
                                     <div className="row justify-content-center">
                                         {el.items.map(el => {
-                                            return <img className="item-icon"  src={`../../images/${el}.png`} />
+                                            return <img className="item-icon" src={`../../images/${el}.png`} />
                                         })}
                                     </div>
 
@@ -92,7 +95,7 @@ export default function Player(props) {
         )
     })
 
-    if(loading) return (<MySpinner/>)
+    if (loading) return (<MySpinner />)
     return (
         <div className="bg">
 

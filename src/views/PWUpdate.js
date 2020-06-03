@@ -44,11 +44,11 @@ export default function PWUpdate() {
     return (
         <div className="container mt-3">
             <form  onSubmit={handleSubmit} onChange={handleChange}>
-                <div class="form-group">
+                <div class="form-group text-white">
                     <label for="exampleInputPassword1">New Password</label>
                     <input type="password" class="form-control" name="password1" placeholder="New Password" />
                 </div>
-                <div class="form-group">
+                <div class="form-group text-white">
                     <label for="exampleInputPassword2">Repeat New Password</label>
                     <input type="password" class="form-control" name="password2" placeholder="Repeat New Password" />
                 </div>

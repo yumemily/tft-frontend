@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import MySpinner from "../components/MySpinner"
+import Tooltip from '@material-ui/core/Tooltip';
 
 export default function Profile(props) {
     const [loading, setLoading] = useState(true)
@@ -73,9 +74,11 @@ export default function Profile(props) {
                                         {renderStars(el)}
                                     </div>
                                     <div className="row justify-content-center">
+                                        <Tooltip title={el.character_id} arrow>
                                         <img className={`unit-img-${el.rarity}`} style={{ width: 40, margin: 4 }} src={`../../images/${el.character_id}.png`} />
-                                    </div>
+                                        </Tooltip>
 
+                                    </div>
                                     <div className="row justify-content-center">
                                         {el.items.map(el => {
                                             return <img className="item-icon" src={`../../images/${el}.png`} />
@@ -91,13 +94,13 @@ export default function Profile(props) {
         )
     })
 
-    if(loading) return (<MySpinner/>)
+    if (loading) return (<MySpinner />)
 
     return (
 
         <div className="bg">
 
-            <div className="container mt-3">
+            <div className="container pt-3">
                 <div className="profile__header">
                     <div className="profile__icon">
                         <img src={`//ddragon.leagueoflegends.com/cdn/10.10.3208608/img/profileicon/${props.user && props.user.info.data.profileIconId}.png`} alt="Profile Icon" />

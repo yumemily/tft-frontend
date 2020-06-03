@@ -1,10 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useHistory } from "react-router-dom"
 import MySpinner from "../components/MySpinner"
-
-import { DndProvider } from "react-dnd"
-
-import { HTML5Backend } from "react-dnd-html5-backend"
+import Tooltip from '@material-ui/core/Tooltip';
 
 export default function Comps(props) {
     const [comps, setComps] = useState([])
@@ -102,7 +99,9 @@ export default function Comps(props) {
                         return <div className="col-md-1 col-sm mx-2 ">
 
                             <div className="row mt-1">
-                                <img style={{ width: 45 }} className={`champ-icon-${el && el.cost}`} src={`../images/${el && el.apiName}.png`} />
+                                <Tooltip title={el.apiName} arrow>
+                                    <img style={{ width: 45 }} className={`champ-icon-${el && el.cost}`} src={`../images/${el && el.apiName}.png`} />
+                                </Tooltip>
                             </div>
                             <div className="row mt-1">
                                 {el.items && el.items.map(el => { return <img className="item-icon" src={`../../images/${el.id}.png`} /> })}
@@ -137,11 +136,11 @@ export default function Comps(props) {
         <div className="py-3" style={{ backgroundColor: "#0D202C" }}>
             <div className="container">
                 <div className="divider-section">
-                    <span className="my-2">v10.11</span>
+                    <span className="my-2">v1.0</span>
                     <div className="divider "></div>
                 </div>
 
-                <div className="my-3" style={{textAlign: "right"}}>
+                <div className="my-3" style={{ textAlign: "right" }}>
                     <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Sort By
                     </button>
@@ -154,7 +153,7 @@ export default function Comps(props) {
                     </div>
                 </div>
             </div>
-            </div>
+        </div>
 
     )
 }

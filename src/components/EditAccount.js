@@ -40,9 +40,9 @@ export default function EditAccount() {
     return (
         <form onSubmit={editProfile} onChange={handleChange}>
         <div class="form-group row">
-          <label for="name" class="col-4 col-form-label">Summoner Name</label>
+          <label for="name" class="col-4 col-form-label text-white">Summoner Name</label>
           <div class="col-8">
-            <input id="name" name="summonerName" placeholder="Summone rName" class="form-control here" type="text" />
+            <input id="name" name="summonerName" placeholder="SummonerName" class="form-control here" type="text" />
           </div>
         </div>
   
