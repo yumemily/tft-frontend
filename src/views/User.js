@@ -60,6 +60,7 @@ export default function User(props) {
               <h1>Welcome back {user && user.name}!</h1>
               <h3>Account Information</h3>
               <h4>Name: {user && user.name}</h4>
+              <h4>Summoner Name: {user && user.summonerName}</h4>
               <h4>Email: {user && user.email}</h4>
             </div>
           }

@@ -50,7 +50,7 @@ export default function EditAccount() {
           <div class="offset-4 col-8">
             <button name="submit" type="submit" class="btn btn-primary">Update My Profile</button>
           </div>
-          {text}
+          <p className="text-white">{text}</p>
         </div>
       </form>
     )

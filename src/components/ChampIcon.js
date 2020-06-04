@@ -27,8 +27,7 @@ export default function (props) {
     return (
         <div ref={drag}>
             <img  
-            // onClick={()=>console.log("khoa")}
-            onClick={()=>props.turnEverythingToNull()}
+            onMouseOver={()=>props.turnEverythingToNull()}
             className={`champ-icon-${props.champ.cost} m-2`}
             width = "50px"
             opacity={isDragging ? ".5": "1"}

@@ -54,7 +54,8 @@ export default function PWUpdate() {
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
-            {text}
+            <p className="text-white">{text}</p>
+            
         </div>
     )
 }

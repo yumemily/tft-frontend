@@ -52,8 +52,6 @@ export default function Hex(props) {
 
     // console.log("isOver",isOver)
 
-
-    
     const [{isDragging}, drag] = useDrag({
         item: {
             type: ItemTypes.CHAMP_HEX_LIST,
@@ -79,7 +77,7 @@ export default function Hex(props) {
                 ref={props.dragable ? drag : drop}
                 class="hexLink" href="#">
                     <img 
-                    onClick={()=>{ props.turnEverythingToNullButIdx(props.idx)}}
+                    onMouseOver={()=>{ props.turnEverythingToNullButIdx(props.idx)}}
                      src={props.hex ? `../images/${props.hex.apiName}.png` : "../images/lightplaceholder.png"} alt="" />
                 </div>
 

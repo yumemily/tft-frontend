@@ -28,6 +28,7 @@ export default function ChampsSection(props) {
             turnEverythingToNull={props.turnEverythingToNull}
             setAllHexesToFalse={props.setAllHexesToFalse}
             champ={champions[e]} 
+            isOver={isOver}
             />)}
         </div>
     )
