@@ -15,11 +15,31 @@ export default function CompBuilder() {
     for (let i = 0; i < 28; i++) {
         me.push(null)
     }
-
+    const [dragable, setDragable] = useState(me)
     const [deck, setDeck] = useState(me)
     const [text, setText] = useState("")
     const [title, setTitle] = useState("")
     const [loading, setLoading] = useState(true)
+    const [compTitle,setCompTitle] = useState("")
+
+    //set every DRAGGED ITEM to false besides the one that
+    //is clicked on
+    //but do i really want everything to be false or just the hexes
+
+    const turnEverythingToNullButIdx = idx => {
+        const clone = [...me]
+        clone[idx] = true
+        setDragable(clone)
+    }
+    const turnEverythingToNull = () => {
+        setDragable([...me])
+    }
+
+    const setDeckElementToNull = idx => {
+        const clone = [...deck]
+        clone[idx] = null
+        setDeck(clone)
+    }
 
     useEffect(() => {
         loadComp();
@@ -50,8 +70,8 @@ export default function CompBuilder() {
         }
     }
 
-    console.log(title)
-    console.log(text)
+
+
 
     const loadComp = async (e) => {
 
@@ -67,6 +87,7 @@ export default function CompBuilder() {
         console.log(data)
         if (data.status === "success") {
             setDeck(data.data.comp)
+            setCompTitle(data.data.title)
             setLoading(false)
         } else if (data.status === "error") {
             // setText(data.message)
@@ -79,6 +100,9 @@ export default function CompBuilder() {
             <MySpinner />
         )
 
+
+    console.log(compTitle)
+
     return (
         <div style={{ backgroundColor: "#0D202C" }}>
             <div className="container" style={{ backgroundColor: "#0D202C" }}>
@@ -86,16 +110,36 @@ export default function CompBuilder() {
                     <span className="my-4">v1.0 Team Comp Builder</span>
                     <div className="divider "></div>
                 </div>
-                <Board me={me} deck={deck} setDeck={setDeck} title={title} setTitle={setTitle} />
+                <Board
+                turnEverythingToNull={turnEverythingToNull}
+                turnEverythingToNullButIdx={turnEverythingToNullButIdx}
+                dragable = {dragable}
+                setDragable = {setDragable}
+                me={me} 
+                deck={deck} 
+                setDeck={setDeck} 
+                title={title} 
+                setDeckElementToNull={setDeckElementToNull}
+                compTitle={compTitle}
+                setTitle={setTitle} />
 
                 <button className="save-btn" onClick={saveComp}>Save Comp</button>
                 <p className="text-danger">{text}</p>
                 <div className="d-flex" >
 
-                    <div className="champ-section"><ChampsSection /></div>
+                    <div className="champ-section"><ChampsSection 
+                    turnEverythingToNull={turnEverythingToNull}
+                                    dragable = {dragable}
+                                    setDragable = {setDragable}
+                    setDeckElementToNull={setDeckElementToNull}
+                    /></div>
 
 
-                    <div className="item-section" ><ItemSection /></div>
+                    <div className="item-section" ><ItemSection 
+                    turnEverythingToNull={turnEverythingToNull}
+                dragable = {dragable}
+                setDragable = {setDragable}
+                    /></div>
                 </div>
             </div>
         </div>

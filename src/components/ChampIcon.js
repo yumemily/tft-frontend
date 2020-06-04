@@ -7,18 +7,29 @@ export default function (props) {
 
     const [{isDragging}, drag] = useDrag({
         item: {
-            type: ItemTypes.CHAMPICON,
+            type: ItemTypes.CHAMP_LIST_HEX,
             obj: props.champ
       
         },
-        collect: monitor => ({
+        collect: monitor => {
+            if(monitor.isDragging()===true) {
+                console.log(true)
+            }
+
+            return {
+            
+            // call setfill to other hexes
             isDragging: !!monitor.isDragging()
-        })
+        }}
     })
 
+  
     return (
         <div ref={drag}>
-            <img className={`champ-icon-${props.champ.cost} m-2`}
+            <img  
+            // onClick={()=>console.log("khoa")}
+            onClick={()=>props.turnEverythingToNull()}
+            className={`champ-icon-${props.champ.cost} m-2`}
             width = "50px"
             opacity={isDragging ? ".5": "1"}
             id="myImg" 

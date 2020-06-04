@@ -1,5 +1,7 @@
 export const ItemTypes = {
-    CHAMPICON : "champicon",
-    ITEMICON : "itemicon",
-    NONE:""
+    CHAMP_LIST_HEX : "CHAMP_LIST_HEX",
+    ITEMICON : "ITEMICON",
+    NONE:"",
+    CHAMP_HEX_LIST:"CHAMP_HEX_LIST",
+    CHAMP_HEX_HEX:"CHAMP_HEX_HEX"
 }

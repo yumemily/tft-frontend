@@ -20,6 +20,7 @@ export default function (props) {
     return (
         <img
             ref={drag}
+            onClick={()=>props.turnEverythingToNull()}
             width = "35px"
             className="m-2"
             id="myImg" 

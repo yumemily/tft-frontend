@@ -1,27 +1,27 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Hex from "./Hex"
-
-// let me = []
-// let itemArr = []
-// for (let i = 0 ; i <28; i++){
-//     me.push(null)
-// }
 
 export default function Board(props) {
     // const [deck, setDeck] = useState(me)
+    const [idxBeingDragged, setIdxBeingDragged] = useState(null)
 
     const setSingleEl = (idx, val) => {
         props.deck[idx] = val
         const arr = [...props.deck]
         props.setDeck(arr)
     }
-
+     
+   
     const handleChange = (e) => {
         e.preventDefault()
         props.setTitle(e.target.value)
     }
 
-    console.log("DECK", props.deck)
+    useEffect(()=>{
+    },[idxBeingDragged])
+
+    
+    // console.log("DECK", props.deck)
 
     return (
         <div style={{ maxWidth: 800 }}>
@@ -31,7 +31,15 @@ export default function Board(props) {
             </form>
 
             <div id="hexGrid">
-                {props.deck.map((e, idx) => <Hex hex={e} idx={idx} magic={setSingleEl} />)}
+                {props.deck.map((e, idx) => <Hex 
+                setIdxBeingDragged={setIdxBeingDragged} 
+                setDeckElementToNull={props.setDeckElementToNull}
+                hex={e} 
+                dragable={props.dragable[idx]} 
+                idx={idx} 
+                magic={setSingleEl}
+                turnEverythingToNullButIdx={props.turnEverythingToNullButIdx}
+                   />)}
             </div>
         </div>
     )

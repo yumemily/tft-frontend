@@ -98,7 +98,7 @@ function App() {
     <DndProvider backend={HTML5Backend}>
 
       <MyNav user={user} setUser={setUser} />
-
+      <div id="index-body">
       <Switch>
         <AuthRoute
           exact
@@ -132,7 +132,7 @@ function App() {
         <Route path="/leaderboard" render={() => <TopTen setPlayer={setPlayer} />} />
         <Route path="/" component={Index} />
       </Switch>
- 
+      </div>
       <footer className="my-footer">
       <div className="container pt-2">
           <div className="divider"></div>
