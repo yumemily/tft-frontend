@@ -802,8 +802,9 @@ header {
 }
 
 .card-img-overlay{
-  position: relative;
+  position: absolute !important;
   right: 40px;
+  bottom: 66px;
 }
 
 .champ-img{
@@ -813,7 +814,7 @@ object-fit: cover;
 .champ-traits{
   position:relative;
   float: left;
-  top: 70px;
+  top: 21px;
   text-align: start;
   font-weight: bold !important;
 }
