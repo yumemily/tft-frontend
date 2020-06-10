@@ -119,7 +119,7 @@ export default function Comps(props) {
 
                     className="text-white"
                     onClick={() => handleFavorite(el._id)}>
-                    {props.user && el.favorited.includes(props.user._id) ? "Unsave" : "Save"}
+                    {props.user && el.favorited.includes(props.user._id) ? "Unfavorite" : "Favorite"}
                 </Link>
 
             </div>

@@ -53,8 +53,8 @@ export default function MyNav(props) {
                     </>
                 ) : (
                         <>
-                            <span className="nav-link">Welcome back {props.user.name}!</span>
-                            <NavDropdown style={{color:"purple"}}title="My Profile" id="basic-nav-dropdown">
+                            {/* <span className="nav-link">Welcome back {props.user.name}!</span> */}
+                            <NavDropdown title={props.user.name} id="basic-nav-dropdown">
                             <NavDropdown.Item ><Link to="/profile">View Profile</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link to="/edit-profile">Edit Profile</Link></NavDropdown.Item>
                                 <NavDropdown.Item ><Link to="/profile/favorites">View Favorites</Link></NavDropdown.Item>

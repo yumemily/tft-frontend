@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import MySpinner from '../components/MySpinner'
+import { Link } from "react-router-dom"
 
 export default function Favorites() {
     const [comps, setComps] = useState(null)
@@ -57,20 +58,26 @@ export default function Favorites() {
                             <div className="row mt-1">
                                 {el.items && el.items.map(el => { return <img className="item-icon" src={`../../images/${el.id}.png`} /> })}
                             </div>
+
                         </div>
 
                     })}
                 </div>
             </div>
+            <div className="col-md-1 col-sm ">
+
+                <Link className="text-white" to={`/comp-builder/${el._id}`}>Open in Builder</Link>
+
+            </div>
         </div>)
     })
 
-    if(loading) return (<MySpinner/>)
+    if (loading) return (<MySpinner />)
 
     return (
 
-            <div className="container" style={{ backgroundColor: "#0D202C"}}>
-                {compRow}
+        <div className="container" style={{ backgroundColor: "#0D202C" }}>
+            {compRow}
 
         </div>
     )
